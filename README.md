@@ -52,28 +52,5 @@ A full-stack web application to track and manage your **video games** and **book
 
 ## Screenshots
 
-> *(Add screenshots or GIFs from the app once the UI is built)*  
-> Example:
-> - `/books` page showing book table or list
-> - `/games` page showing game tracker and filters
 
----
 
-## Getting Started
-
-### Prerequisites
-- Node.js
-- PostgreSQL
-- npm
-
----
-
-### Backend Setup
-
-```bash
-cd Server
-npm install
-cp .env.example .env        # Create your .env file with DATABASE_URL and PORT
-npm run migrate              # Runs SQL migrations (creates tables)
-npm run seed                 # Populates database with sample data
-npm run dev                  # Starts Express server (http://localhost:3001 by default)
