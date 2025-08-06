@@ -41,6 +41,7 @@ CREATE TABLE books (
 CREATE TABLE games (
     game_id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
+    developer VARCHAR(100),
     genre VARCHAR(50),
     platform VARCHAR(50),
     release_year INT,
