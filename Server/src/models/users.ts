@@ -77,3 +77,5 @@ export function UserFactory(sequelize: Sequelize) {
 
     return User;
 }
+
+export { User };

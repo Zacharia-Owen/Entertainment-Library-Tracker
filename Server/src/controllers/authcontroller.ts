@@ -1,5 +1,5 @@
 import express, { type Request, type Response } from 'express';
-import { User } from '../models/user.js';
+import { User } from '../models/users.ts';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 // import rateLimit from "express-rate-limit";
@@ -29,9 +29,9 @@ const generateRefreshToken = (user: { id: number; username: string }) => {
 
 // User signup
 export const signup = async (req: Request, res: Response) => {
-    const { username, password } = req.body;
-    if (!username || !password) {
-        return res.status(400).json({ message: 'Username and password are required' });
+    const { username, password, email } = req.body;
+    if (!username || !password || !email) {
+        return res.status(400).json({ message: 'Username, email, and password are required' });
     }
     try {
         const existingUser = await User.findOne({ where: { username } });
@@ -39,7 +39,7 @@ export const signup = async (req: Request, res: Response) => {
             return res.status(409).json({ message: 'Username already exists' });
         }
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = await User.create({ username, password: hashedPassword });
+        const newUser = await User.create({ username, email, password: hashedPassword });
         res.status(201).json({ message: 'User created successfully', userId: newUser.id });
     } catch (error) {
         console.error('Signup error:', error);
