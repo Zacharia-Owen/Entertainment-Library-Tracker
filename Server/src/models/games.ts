@@ -19,7 +19,7 @@ class Game extends Model<GameAttributes, GameCreationAttributes> implements Game
     public rating!: number | null; // Rating can be null if not rated yet
     public developer!: string;
 
-    // timestamps!
+    // timestamps
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }

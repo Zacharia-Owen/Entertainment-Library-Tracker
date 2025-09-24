@@ -19,7 +19,7 @@ class TVShows extends Model<TVShowsAttributes, TVShowsCreationAttributes> implem
     public network!: string;
     public rating!: number | null; // Rating can be null if not rated yet
 
-    // timestamps!
+    // timestamps
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }

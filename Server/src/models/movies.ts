@@ -19,7 +19,7 @@ class Movies extends Model<MoviesAttributes, MoviesCreationAttributes> implement
     public director!: string;
     public rating!: number | null; // Rating can be null if not rated yet
 
-    // timestamps!
+    // timestamps
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }
