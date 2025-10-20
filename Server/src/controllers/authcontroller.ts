@@ -2,21 +2,9 @@ import express, { type Request, type Response } from 'express';
 import { User } from '../models/users.ts';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-// import rateLimit from "express-rate-limit";
-// import cookieParser from "cookie-parser"
 
 const app = express();
 app.use(express.json());
-// app.use(cookieParser());
-
-// Login rate limiter
-// const loginLimiter = rateLimit({
-//     windowMs: 15 * 60 * 1000,
-//     max: 100,
-//     message: { message: 'Too many login attempts, please try again later' },
-//     standardHeaders: true,
-//     legacyHeaders: false,
-// });
 
 // JWT Helpers
 const generateAccessToken = (user: { id: number; username: string }) => {
@@ -85,7 +73,7 @@ app.post("/refresh", (req: Request, res: Response) => {
     if (!refreshToken) {
         return res.status(401).json({ message: "No refresh token provided" });
     }
-    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET || '', (err, user) => {
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET || '', (err: any, user: any) => {
         if (err) {
             return res.status(403).json({ message: "Invalid refresh token" });
         }
