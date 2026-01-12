@@ -62,3 +62,5 @@ export function initMoviesModel(sequelize: Sequelize): typeof Movies {
 
     return Movies;
 }
+
+export { Movies };

@@ -62,3 +62,5 @@ export function initTVShowsModel(sequelize: Sequelize): typeof TVShows {
 
     return TVShows;
 }
+
+export { TVShows };
