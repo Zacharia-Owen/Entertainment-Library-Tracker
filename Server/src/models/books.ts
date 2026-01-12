@@ -62,3 +62,5 @@ export function initBooksModel(sequelize: Sequelize): typeof Books {
 
     return Books;
 }
+
+export { Books };
