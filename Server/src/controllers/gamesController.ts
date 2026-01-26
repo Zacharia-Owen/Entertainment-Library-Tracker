@@ -32,7 +32,6 @@ export const getGameById = async (req: Request, res: Response) => {
     }
 };
 
-
 export const createGame = async (req: Request, res: Response) => {
     const { name, genre, releaseDate, rating, developer } = req.body;
 
