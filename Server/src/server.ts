@@ -1,5 +1,6 @@
 import express  from "express";
 import routes from "./routes";
+import './types/express.d.ts';
 
 const app = express();
 
